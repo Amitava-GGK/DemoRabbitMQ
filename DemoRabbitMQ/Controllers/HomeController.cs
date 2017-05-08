@@ -21,12 +21,12 @@ namespace DemoRabbitMQ.Controllers
         // the connectionfactory is stateless and can safetly be a static resource in your app
 
         static readonly ConnectionFactory connFactory = new ConnectionFactory();
-//Constructor
+#region Constructor
         public HomeController()
         {
             connFactory.Uri = url.Replace("amqp://", "amqps://");
         }
-
+#endregion
         // GET: Home
         public ActionResult Index()
         {
